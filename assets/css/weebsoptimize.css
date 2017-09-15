@@ -1,0 +1,43 @@
+@media screen and (max-width: 1600px) {
+    .weeblogo {
+       font-size:70px;
+    }
+	.weebmembers {
+		width:49%;
+	}
+}
+@media screen and (max-width: 1366px) {
+	.weebcontainer {
+		margin-top:11%;
+	}
+    .weeblogo {
+       font-size:60px;
+    }
+	.weebmembers {
+		width:55%;
+	}
+	.names {
+		font-size:25px;
+	}
+	.links {
+		font-size: 30px;
+	}
+}
+@media screen and (max-width: 360px) {
+	.weebcontainer{
+		margin-top:35%;
+	}
+    .weeblogo {
+       font-size:20px;
+    }
+	.weebmembers {
+		width:90%;
+	}
+	.names {
+		font-size:15px;
+	}
+	.links {
+		font-size: 20px;
+	}
+}
+
