@@ -1,0 +1,198 @@
+﻿<html>
+
+<!--
+	
+	██╗    ██╗███████╗███████╗██████╗ ███████╗██████╗ ██╗   ██╗███████╗
+	██║    ██║██╔════╝██╔════╝██╔══██╗██╔════╝██╔══██╗██║   ██║██╔════╝
+	██║ █╗ ██║█████╗  █████╗  ██████╔╝███████╗██████╔╝██║   ██║███████╗
+	██║███╗██║██╔══╝  ██╔══╝  ██╔══██╗╚════██║██╔══██╗██║   ██║╚════██║
+	╚███╔███╔╝███████╗███████╗██████╔╝███████║██║  ██║╚██████╔╝███████║
+	 ╚══╝╚══╝ ╚══════╝╚══════╝╚═════╝ ╚══════╝╚═╝  ╚═╝ ╚═════╝ ╚══════╝
+                                                                   
+-->
+
+	<head>
+	
+		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="assets/css/weebs.css">
+		<link rel="stylesheet" type="text/css" href="assets/css/weebsoptimize.css">
+		<link rel="stylesheet" type="text/css" href="assets/css/jquery-sakura.min.css">
+		<link rel="stylesheet" type="text/css" href="assets/css/animate.css">
+		<script src="https://use.fontawesome.com/a5e30dd034.js"></script>
+		<script src="http://code.jquery.com/jquery-3.2.1.js"></script> 
+		<script src="https://cdn.jsdelivr.net/jquery.typeit/4.4.0/typeit.min.js"></script>
+		<!--<script src="assets/js/jquery.js"></script>-->
+		<script src="assets/js/disable.js"></script>
+		<script src="assets/js/music.js"></script>
+		<script src="assets/js/visual.js"></script>
+		<title>WeebsRUS</title>
+		
+	</head>
+	<body>
+		
+		<div class="weebcontainer animated fadeIn" style="animation-delay:5s">
+			<div class="weeblogo" id="weeb"></div>
+			<hr>
+			<br><br><br>
+			<div class="weebmembers" id="scrollbar" onclick="stop(); play(); setTimeout( myfunction, delay );">
+				<a class="names" target="_blank" href="http://moonchow.xyz/">MoonChow</a><br>
+				<a class="names" href="http://zexc.xyz/">Zex</a><br>
+				<a class="names" target="_blank">SchattenWolf_X</a><br>
+				<a class="names" target="_blank">LittleMoon</a><br>
+				<a class="names" target="_blank">Sora</a><br>
+				<a class="names" target="_blank">Zita</a><br>
+			</div>
+			<br><br><br>
+			<hr>
+			<br><br><br>
+			<div class="weeblinks" onclick="stop(); play(); setTimeout( myfunction, delay );">
+				<a class="links" href="/store">[ store ]</a><br /><br />
+				<a class="links" href="/radio">[ radio ]</a><br /><br />
+				<a class="links" href="https://twitter.com/weebsrus_club" target="_blank">[ contact ]</a>
+			</div>
+		</div>
+		
+		<div class="bg" id="imageDiv" style="background-image: url('assets/img/bg.png'); display: block;"></div>
+		
+		<div class="sprites animated fadeIn" id="img" style="animation-delay:5s"></div>
+
+		<video id="weebvid" autoplay>
+			<source src="assets/vid/loading.mp4" type="video/mp4">
+		</video>
+		<div id="weebvid2"></div>
+	
+		<audio id="audio" loop onloadeddata='var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 5000)'>
+			<source src="assets/aud/danganronpa.mp3" type="audio/mp3">
+		</audio>
+		<audio id="horror" src="assets/aud/despair.mp3"></audio>
+		
+		<!-- Master Script -->
+		
+		<!--Text-->
+		<script>
+			$('#weeb').typeIt({
+				speed: 133,
+				cursor: true,
+				autoStart: true,
+			})
+			.tiPause(5000)
+			.tiType('Danganronpa')
+			.tiPause(3000)
+			.tiDelete(11)
+			.tiPause(2000)
+			.tiSettings({speed:250})
+			.tiType('weebsrus.club');
+			
+			$(function(){
+				$("a").click(function(evt){
+					event.preventDefault();
+					var link = $(this).attr("href");
+					setTimeout(function() {
+						window.location.href = link;
+					}, 9000);
+				});
+			});
+        
+		
+			$(document).ready(function(){
+				$('body').find('img[src$="https://cloud.githubusercontent.com/assets/23024110/20663010/9968df22-b55e-11e6-941d-edbc894c2b78.png"]').parent().closest('a').closest('div').remove();
+			});
+		</script>
+		
+		<!--Image-->
+		<script>
+		function randomImage() {
+
+			var fileNames = [
+				"1.gif",
+				"2.png",
+				"3.jpg",
+				"4.jpg",
+				"5.png",
+				"6.png",
+				"7.gif",
+				"8.png",
+				"9.png",
+				"10.png",
+				"11.png",
+				"12.gif",
+				"13.png",
+				"14.gif",
+				"15.gif",
+				"16.png",
+				"17.png"
+			];
+			var randomIndex = Math.floor(Math.random() * fileNames.length);
+			$(#img).html('<img src="assets/img/sprites/' + fileNames[randomIndex] + '>"');
+		};
+		setTimeout(randomImage, 10000);
+		
+		$('a').on({click: function(){
+			$(this).removeClass('bg').addClass('monokuma-bg');
+		};
+		</script>
+		<!--<script>
+			var images = ['danganronpa.png'];
+			$('<img src="assets/img/' + images[Math.floor(Math.random() * images.length)] + '">').appendTo('.sprites');
+			
+			
+			var myImages = new Array("assets/img/bg.png","assets/img/bg1.jpg");
+			function SetImage() {
+				var random = myImages[Math.floor(Math.random() * myImages.length)];
+				while ('url(\"' + random + '\")' === $('#imageDiv').css('background-image')) {
+				  random = myImages[Math.floor(Math.random() * myImages.length)];
+				}
+				  random = 'url(' + random + ')';
+
+				$('#imageDiv').fadeOut(1000);
+
+				setTimeout(function () {
+					$('#imageDiv').css('background-image', random);
+					$('#imageDiv').fadeIn(1000);
+				}, 1000);
+			}
+		</script>-->
+		
+		<!--Video-->
+		<script>
+			var vid = document.getElementById("weebvid");
+				vid.volume = 0.1; 
+			var player=document.getElementById('weebvid');
+				player.addEventListener('ended',myHandler,true);
+
+			function myHandler(e)
+			{
+				$(weebvid).remove();
+				$(weebvid2).html("<video autoplay loop><source src='assets/vid/*.mp4' type='video/mp4'></video>");
+			};
+		</script>
+			
+		<!--Audio-->
+		<script>
+			var music = document.currentScript.parentElement;
+			
+			function stop(){
+				var audio = document.getElementById("audio");
+				audio.pause();
+			};
+				
+			function play(){
+				var horror = document.getElementById("horror");
+				horror.volume = 0.3;
+				horror.play();
+			};
+		</script>
+	</body>
+
+<!--
+	
+	██╗    ██╗███████╗███████╗██████╗ ███████╗██████╗ ██╗   ██╗███████╗
+	██║    ██║██╔════╝██╔════╝██╔══██╗██╔════╝██╔══██╗██║   ██║██╔════╝
+	██║ █╗ ██║█████╗  █████╗  ██████╔╝███████╗██████╔╝██║   ██║███████╗
+	██║███╗██║██╔══╝  ██╔══╝  ██╔══██╗╚════██║██╔══██╗██║   ██║╚════██║
+	╚███╔███╔╝███████╗███████╗██████╔╝███████║██║  ██║╚██████╔╝███████║
+	 ╚══╝╚══╝ ╚══════╝╚══════╝╚═════╝ ╚══════╝╚═╝  ╚═╝ ╚═════╝ ╚══════╝
+                                                                   
+-->	
+	
+</html>
